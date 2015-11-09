@@ -1,0 +1,34 @@
+package com.company;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+
+        WebDriver driver = new FirefoxDriver();// this tells the computer what browser to use.
+        driver.get("http://www.thejamstop.com/");//this gets the website and launches it.
+
+        WebElement element = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/a[1]"));//Using xpath as locator to click the Sign in Icon
+        element.click();//this clicks the Icon
+
+        element = driver.findElement(By.xpath("/html/body/div[2]/form/div[1]/div/input"));//xpath email location.
+        element.sendKeys("ysraeltorres87@gmail.com");//this tells the computer what to put in that location "your email "
+
+        element = driver.findElement(By.xpath("/html/body/div[2]/form/div[2]/div/input"));//xpath password locator
+        element.sendKeys("Tester123");//tells the computer what to put in that location "your password"
+
+        element = driver.findElement(By.xpath("/html/body/div[2]/form/div[3]/button"));//xpath sign in icon location
+        element.click(); // this clicks the sign in Icon
+
+
+
+
+    }
+
+}

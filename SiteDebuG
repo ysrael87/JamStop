@@ -1,0 +1,40 @@
+package QA;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by Ysrael on 11/20/15.
+ */
+public class Project {
+
+    public static void main(String[] args) {
+
+        WebDriver driver = new FirefoxDriver();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("http://tbsdemo.in/QAAcademy/admin/login?url=%2F%2Fadmin");
+        WebElement element;
+
+
+        element = driver.findElement(By.id("user_email"));
+        driver.manage().timeouts();
+        element.sendKeys("admin@admin.com");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+        driver.findElement(By.id("user_password")); [[FirefoxDriver: firefox on MAC (0d8a1564-3a9b-4b4c-9aab-446e3e095036)] -> id: user_email]
+        element.sendKeys("qaacademy");
+
+
+        driver.findElement(By.xpath("/html/body/div[3]/form/div[4]/button"));
+        element.click();
+    }
+
+
+}
